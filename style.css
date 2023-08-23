@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
 /* Begin CSS Reset */
 
 * {
@@ -7,6 +9,9 @@
 }
 
 /* End CSS Reset */
+body {
+  font-family: "Roboto", sans-serif;
+}
 
 .dashboard-container {
   display: grid;
@@ -17,8 +22,13 @@
   grid-area: 1 / 2 / 2 / 3;
   background: skyblue;
   display: grid;
-  grid-template-rows: 1fr 2fr;
+  grid-template-rows: 1fr 1fr;
   align-items: center;
+}
+
+.header p,
+.header span {
+  font-weight: bold;
 }
 
 .header-top {
@@ -28,9 +38,19 @@
   padding: 10px;
 }
 
+div.header-top > img,
+div.header-top > span {
+  margin-right: 35px;
+}
+
+div.header-top > span {
+  font-size: 1.2rem;
+}
+
 button.search {
   background: transparent;
   border: none;
+  margin-left: 30px;
 }
 
 button.search:hover {
@@ -41,9 +61,13 @@ button.search:hover {
   width: 25px;
 }
 
+#bell {
+  margin-left: auto;
+}
+
 img.avatar-small {
-  height: 40px;
-  width: 40px;
+  height: 50px;
+  width: 50px;
   border: 1px solid black;
   border-radius: 100%;
   background-color: white;
@@ -53,6 +77,7 @@ input[type="search"] {
   border-radius: 20px;
   height: 25px;
   width: 50%;
+  margin-left: 10px;
 }
 
 .header-top > input + img {
@@ -65,6 +90,15 @@ input[type="search"] {
   justify-content: space-around;
   align-items: center;
   padding: 10px;
+  margin-bottom: 10px;
+}
+
+.header-bottom p:first-of-type {
+}
+
+.header-bottom p:last-of-type {
+  font-size: 1.5rem;
+  margin-top: 5px;
 }
 
 .header-bottom button:first-of-type {
@@ -85,7 +119,7 @@ img.avatar-large {
   border: 1px solid black;
   border-radius: 100%;
   background-color: white;
-  margin-right: 20px;
+  margin: 0 20px 0 30px;
 }
 
 .sidebar {
@@ -131,7 +165,8 @@ img.avatar-large {
 
 .main-content-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   padding: 10px;
 }
 
@@ -140,6 +175,7 @@ img.avatar-large {
   grid-template: repeat(3, 1fr) / repeat(2, 1fr);
   gap: 25px;
   padding: 10px;
+  grid-area: 1 / 1 / 4 / 3;
 }
 
 .card {
@@ -152,12 +188,17 @@ img.avatar-large {
 .content-container2 {
   display: grid;
   grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-area: 1 / 3 / 4 / 4;
 }
 
 .announcements {
-  height: 100px;
-  background: white;
   width: 75%;
   padding: 5px;
   text-align: center;
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.trending {
+  grid-area: 2 / 1 / 3 / 2;
 }
