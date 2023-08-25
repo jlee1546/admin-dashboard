@@ -15,15 +15,14 @@ body {
 
 .dashboard-container {
   display: grid;
-  grid-template: 1fr 4fr / 1fr 4fr;
+  grid-template: 200px 5fr / 1fr 4fr;
 }
 
 .header {
   grid-area: 1 / 2 / 2 / 3;
-  background: skyblue;
+  background: #eff6ff;
   display: grid;
-  grid-template-rows: 1fr 1fr;
-  align-items: center;
+  grid-template-rows: repeat(2, 1fr);
 }
 
 .header p,
@@ -89,6 +88,7 @@ input[type="search"] {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  align-self: center;
   padding: 10px;
   margin-bottom: 10px;
 }
@@ -111,6 +111,8 @@ input[type="search"] {
   border-radius: 25px;
   border: none;
   margin-right: 20px;
+  background: #2563eb;
+  color: #eff6ff;
 }
 
 img.avatar-large {
@@ -124,9 +126,10 @@ img.avatar-large {
 
 .sidebar {
   grid-area: 1 / 1 / 3 / 2;
-  background: lightcoral;
+  background: #2563eb;
   display: grid;
   grid-template-rows: 10% 1fr 2fr;
+  color: #eff6ff;
 }
 
 .sidebar-logo {
@@ -160,35 +163,34 @@ img.avatar-large {
 
 .main-content {
   grid-area: 2 / 2 / 3 / 3;
-  background: lightgreen;
-}
-
-.main-content > p {
-  font-size: 1.3rem;
-  margin-left: 25px;
-  margin-top: 25px;
-  font-weight: bold;
+  background: #bfdbfe;
 }
 
 .main-content-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 50px 1fr 1fr 1fr;
   padding: 10px;
 }
 
 .content-container {
   display: grid;
-  grid-template: repeat(3, 1fr) / repeat(2, 1fr);
-  gap: 25px;
-  padding: 10px;
-  grid-area: 1 / 1 / 4 / 3;
-  width: 85%;
+  grid-template: 50px repeat(3, 265px) / repeat(2, 1fr);
+  padding: 20px;
+  column-gap: 20px;
+  grid-area: 1 / 1 / 5 / 3;
+}
+
+.content-container p:first-of-type {
+  font-size: 1.3rem;
+
+  font-weight: bold;
+  grid-area: 1 / 1 / 2 / 3;
 }
 
 .card {
   font-size: 0.8rem;
-  background: lightgrey;
+  background: #eff6ff;
 
   border-left: 5px solid yellow;
   border-radius: 10px;
@@ -196,6 +198,7 @@ img.avatar-large {
   flex-direction: column;
   padding: 10px;
   justify-content: space-around;
+  margin-bottom: 25px;
 }
 
 .card p:first-of-type {
@@ -217,19 +220,26 @@ img.avatar-large {
 .content-container2 {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 50px 1fr 50px 1fr;
   grid-area: 1 / 3 / 4 / 4;
-  padding: 10px;
+  padding: 20px;
+}
+
+.content-container2 p:first-of-type {
+  grid-area: 1 / 1 / 2 / 2;
+  font-size: 1.3rem;
+  font-weight: bold;
 }
 
 .announcements {
   width: 75%;
   padding: 5px;
   text-align: center;
-  grid-area: 1 / 1 / 2 / 2;
-  background: white;
+
+  background: #eff6ff;
   text-align: left;
   border-radius: 10px;
+  grid-area: 2 / 1 / 3 / 2;
 }
 
 .announcement {
@@ -245,9 +255,16 @@ img.avatar-large {
   font-size: 0.8rem;
 }
 
+#trending {
+  grid-area: 3 / 1 / 4 / 2;
+  font-size: 1.3rem;
+  font-weight: bold;
+  align-self: end;
+}
+
 .trending {
-  grid-area: 2 / 1 / 3 / 2;
-  background: white;
+  grid-area: 4 / 1 / 5 / 2;
+  background: #eff6ff;
   width: 75%;
   margin-top: 25px;
   padding: 10px 10px;
