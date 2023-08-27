@@ -18,7 +18,6 @@ body {
   border: 1px solid black;
   padding: 7px;
   border-radius: 100%;
-  color: red;
 }
 
 .large-avatar {
@@ -26,7 +25,10 @@ body {
   border: 1px solid black;
   border-radius: 100%;
   padding: 10px;
-  color: red;
+}
+
+.secondary-text {
+  color: rgb(131, 131, 131);
 }
 
 /*  Page Container */
@@ -41,6 +43,8 @@ body {
   background: #eff6ff;
   display: grid;
   grid-template-rows: repeat(2, 1fr);
+  box-shadow: 0 0 6px 6px rgb(179, 198, 244);
+  margin-bottom: 5px;
 }
 
 .header p,
@@ -93,25 +97,31 @@ input[type="search"] {
   font-size: 1.3rem;
 }
 
-img.avatar-small {
-  height: 50px;
-  width: 50px;
-  border: 1px solid black;
-  border-radius: 100%;
-  background-color: white;
-}
-
 /* Bottom Section of Header */
 .header-bottom {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  align-self: center;
-  padding: 10px;
-  margin-bottom: 10px;
 }
 
-.header-bottom p:first-of-type {
+/* Bottom Left Section of Header */
+.header-bottom-left {
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+  margin-left: 20px;
+}
+
+.header-bottom-left-greeting {
+  width: 80%;
+}
+
+/* Bottom Right Section of Header */
+.header-bottom-right {
+  display: flex;
+  width: 40%;
+  justify-content: flex-end;
+  margin-right: 20px;
 }
 
 .header-bottom p:last-of-type {
@@ -119,13 +129,9 @@ img.avatar-small {
   margin-top: 5px;
 }
 
-.header-bottom button:first-of-type {
-  margin-left: auto;
-}
-
-.header-bottom button {
-  width: 10%;
-  padding: 10px 5px;
+.header-bottom-right > button {
+  width: 20%;
+  padding: 15px 5px;
   border-radius: 25px;
   border: none;
   margin-right: 20px;
@@ -133,13 +139,9 @@ img.avatar-small {
   color: #eff6ff;
 }
 
-img.avatar-large {
-  height: 70px;
-  width: 70px;
-  border: 1px solid black;
-  border-radius: 100%;
-  background-color: white;
-  margin: 0 20px 0 30px;
+.header-bottom-right > button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
 }
 
 /* Sidebar */
@@ -175,6 +177,13 @@ img.avatar-large {
   margin-left: 10px;
 }
 
+.sidebar-links-top li:hover,
+.sidebar-links-bottom li:hover,
+.sidebar-links-top span:hover,
+.sidebar-links-bottom span:hover {
+  cursor: pointer;
+}
+
 /* Main Content Area */
 .main-content {
   grid-area: 2 / 2 / 3 / 3;
@@ -188,7 +197,7 @@ img.avatar-large {
   padding: 10px;
 }
 
-/* Content Comtainer of Main Content */
+/* Content Container of Main Content */
 .content-container {
   display: grid;
   grid-template: 50px repeat(3, 265px) / repeat(2, 1fr);
@@ -212,32 +221,46 @@ img.avatar-large {
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  padding: 10px;
-  justify-content: space-around;
+  padding: 25px;
+
   margin-bottom: 25px;
 }
 
 .card p:first-of-type {
   font-size: 1.1rem;
   font-weight: bold;
+  margin-bottom: 25px;
 }
 
-.card img {
-  width: 25px;
-  height: 25px;
-  margin-right: 15px;
+.card p:last-of-type {
+  width: 80%;
+  flex-grow: 1;
 }
 
 .card-links {
   display: flex;
-  justify-content: flex-end;
+  justify-content: end;
+  font-size: 1rem;
+  color: rgb(159, 147, 79);
+}
+
+.fa-star,
+.fa-eye {
+  margin-right: 25px;
+}
+
+.fa-star:hover,
+.fa-eye:hover,
+.fa-code-fork:hover {
+  cursor: pointer;
+  transform: scale(1.5);
 }
 
 /* Content Container 2 of Main Content */
 .content-container2 {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 50px 1fr 50px 1fr;
+  grid-template-rows: 50px 3fr 50px 2fr;
   grid-area: 1 / 3 / 4 / 4;
   padding: 20px;
 }
@@ -252,21 +275,26 @@ img.avatar-large {
 .announcements {
   width: 75%;
   padding: 5px;
-  text-align: center;
 
   background: #eff6ff;
   text-align: left;
   border-radius: 10px;
   grid-area: 2 / 1 / 3 / 2;
+  display: grid;
 }
 
 .announcement {
-  padding: 10px 20px;
-  margin-top: 10px;
+  padding: 10px;
+}
+
+.announcement:nth-of-type(1),
+.announcement:nth-of-type(2) {
+  border-bottom: 1px solid rgb(179, 198, 244);
 }
 
 .announcement p:first-of-type {
   font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .announcement p:last-of-type {
@@ -286,16 +314,25 @@ img.avatar-large {
   background: #eff6ff;
   width: 75%;
   margin-top: 25px;
-  padding: 10px 10px;
+  padding: 10px;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .trending-info {
   display: flex;
-  justify-content: space-evenly;
-  margin-top: 10px;
+
+  margin: 10px;
+}
+
+.trending-info-users {
+  margin-left: 25px;
 }
 
 .trending-info p:first-of-type {
   font-weight: bold;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
 }
