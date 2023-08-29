@@ -195,6 +195,7 @@ input[type="search"] {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 50px 1fr 1fr 1fr;
   padding: 10px;
+  min-width: 800px;
 }
 
 /* Content Container of Main Content */
@@ -216,7 +217,7 @@ input[type="search"] {
 .card {
   font-size: 0.8rem;
   background: #eff6ff;
-
+  min-width: 225px;
   border-left: 5px solid #172554;
   border-radius: 10px;
   display: flex;
@@ -273,9 +274,8 @@ input[type="search"] {
 
 /* Announcement Area of Container 2 of Main Content */
 .announcements {
-  width: 75%;
   padding: 5px;
-
+  width: 90%;
   background: #eff6ff;
   text-align: left;
   border-radius: 10px;
@@ -312,7 +312,7 @@ input[type="search"] {
 .trending {
   grid-area: 4 / 1 / 5 / 2;
   background: #eff6ff;
-  width: 75%;
+  width: 90%;
   margin-top: 25px;
   padding: 10px;
   border-radius: 10px;
